@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100dvh;
+}
+a{
+    text-decoration: none;
+    padding: 0.1rem;
+    background: lightgray;
+    border-radius: 0.5rem;
+    outline: solid 1px #000;
+}
+.answers{
+    padding: 1rem;
+}
