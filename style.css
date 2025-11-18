@@ -6,15 +6,32 @@
 body{
     min-height: 100dvh;
 }
-a{
+.joke{
+    padding: 1rem;
+    outline: solid 1px #000;
+}
+.text section{
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-direction: row;
+}
+.vote{
+    gap: 0.5rem;
+}
+.vote a{
+    display: grid;
+    place-content: center;
+    width: 20px;
+    height: 20px;
     text-decoration: none;
     padding: 0.1rem;
     background: lightgray;
     border-radius: 0.5rem;
     outline: solid 1px #000;
 }
-.text section{
-    padding: 0.5rem;
+.everyJoke{
     display: flex;
     flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
 }

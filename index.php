@@ -13,12 +13,14 @@ if(isset($_POST['btn']))
     $result=mysqli_query($conn,$sql);
 }
 
-if(isset($_POST['addscore']))
+if(isset($_GET['vote']))
 {
-    $jokescore=$_POST['score'];  
-    $jokescore += $jokescore;
-    $sql="INSERT INTO jokes(score) VALUES ('$jokescore')";
-    $result=mysqli_query($conn,$sql);
+    $Vote = $_GET['vote'];
+    $id = $_GET['id'];
+    if ($Vote=="up")
+    {
+        $sql="UPDATE jokes SET score=score+1 WHERE id=$id";
+    }
 }
 
 $sql="SELECT * FROM jokes ORDER BY score DESC";
@@ -49,15 +51,15 @@ $result=mysqli_query($conn,$sql);
                 <input type="submit" value="Lägg in" name="btn"></input>
             </form>
         </section>
-        <section class="answers">
+        <section class="everyJoke">
             <?php 
                 while($row=mysqli_fetch_assoc($result)): ?>
-                <details>
+                <details class="joke">
                     <summary class="text">
                         <section>
                             <?=$row['joketext']?>
                         </section>
-                        <section class="voteing">
+                        <section class="vote">
                             <a href="index.php?vote=down&id=<?=$row['id']?>">-</a>
                             <a href="index.php?vote=up&id=<?=$row['id']?>">+</a>
                         </section>
