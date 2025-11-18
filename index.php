@@ -52,16 +52,18 @@ $result=mysqli_query($conn,$sql);
         <section class="answers">
             <?php 
                 while($row=mysqli_fetch_assoc($result)): ?>
-                        <details>
-                            <summary>
-                                <?=$row['joketext']?>
-                                <section class="voteing">
-                                    <a href="index.php?vote=down&id=<?=$row['id']?>">-</a>
-                                    <a href="index.php?vote=up&id=<?=$row['id']?>">+</a>
-                                </section>
-                            </summary>
-                            <?=$row['jokeanswer']?>  
-                        </details>
+                <details>
+                    <summary class="text">
+                        <section>
+                            <?=$row['joketext']?>
+                        </section>
+                        <section class="voteing">
+                            <a href="index.php?vote=down&id=<?=$row['id']?>">-</a>
+                            <a href="index.php?vote=up&id=<?=$row['id']?>">+</a>
+                        </section>
+                    </summary>
+                    <?=$row['jokeanswer']?>  
+                </details>
             <?php 
                 endwhile  
             ?>

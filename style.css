@@ -13,6 +13,8 @@ a{
     border-radius: 0.5rem;
     outline: solid 1px #000;
 }
-.answers{
-    padding: 1rem;
+.text section{
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
 }
